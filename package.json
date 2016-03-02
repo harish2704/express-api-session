@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/harish2704/express-api-session/issues"
   },
-  "homepage": "https://github.com/harish2704/express-api-session#readme"
+  "homepage": "https://github.com/harish2704/express-api-session#readme",
+  "dependencies": {
+    "express-session": "^1.13.0"
+  }
 }

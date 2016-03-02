@@ -66,8 +66,8 @@ function HandleSessionId( opts ){
         var signedCookie = signature.sign( this.sessionID,  cookieSecret );
         res.toBeSent.sessionId = new Buffer(signedCookie).toString('base64');
       };
-      next();
     }
+    next();
   };
 
 }
