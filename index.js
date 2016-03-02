@@ -49,12 +49,11 @@ function HandleSessionId( opts ){
 
         // Overwrite session id
         parts = cookieStr.split('; ');
-        var keys = parts.map( function(v){ return v.slice(0,13); });
-        var pos = keys.indexOf( cookieName + '=s' );
-        if( pos == -1 ){
-          parts.push( sessionIdPart );
+        var sidStr = parts.filter( function(v){ return v.indexOf(cookieName) !== -1; })[0];
+        if( sidStr ){
+          parts[ parts.indexOf( sidStr ) ] = sessionIdPart;
         } else {
-          parts[pos] = sessionIdPart;
+          parts.push( sessionIdPart );
         }
       } else {
         parts = [ sessionIdPart ];
@@ -62,11 +61,11 @@ function HandleSessionId( opts ){
 
       req.headers.cookie = parts.join('; ');
 
-      req.getClientSessionId = function(){
-        var signedCookie = signature.sign( this.sessionID,  cookieSecret );
-        res.toBeSent.sessionId = new Buffer(signedCookie).toString('base64');
-      };
     }
+    req.getClientSessionId = function(){
+      var signedCookie = signature.sign( this.sessionID,  cookieSecret );
+      return new Buffer(signedCookie).toString('base64');
+    };
     next();
   };
 
