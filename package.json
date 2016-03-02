@@ -1,0 +1,24 @@
+{
+  "name": "express-api-session",
+  "version": "1.0.0",
+  "description": "A Hack which will enable us to use sessinId based session-management for expression-session middleware",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harish2704/express-api-session.git"
+  },
+  "keywords": [
+    "express-session",
+    "REST",
+    "sessionId"
+  ],
+  "author": "Harish.K <harish2704@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harish2704/express-api-session/issues"
+  },
+  "homepage": "https://github.com/harish2704/express-api-session#readme"
+}
