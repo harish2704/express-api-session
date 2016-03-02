@@ -1,7 +1,7 @@
 "use strict";
 
 var assert = require('assert');
-var signature = require('express-session/node_modules/cookie-signature');
+var signature = require('cookie-signature');
 
 
 /**

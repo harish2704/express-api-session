@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/harish2704/express-api-session#readme",
   "dependencies": {
-    "express-session": "^1.13.0"
+    "cookie-signature": "^1.0.6"
   }
 }
